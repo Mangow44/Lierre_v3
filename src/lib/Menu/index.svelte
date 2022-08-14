@@ -16,25 +16,26 @@
 
 <div
 	id="menu"
-	class="fixed flex justify-center z-10 w-full h-full
+	class="fixed flex justify-center z-10 w-full
 		menu-transition
 		{displayMenu ? 'display-menu' : 'hide-menu'}"
+	style="height:calc(100% + {screenWidth / 4}px);"
 >
 	<span
 		id="menu-rect"
 		class="absolute top-0 w-full"
-		style="background-color: #0D0D0D;height:calc(100% - {screenWidth / 2}px);"
+		style="background-color: #0D0D0D;height:calc(100% - {screenWidth / 4}px);"
 	/>
 	<span
 		id="menu-circle"
-		class="absolute mx-auto bottom-0 w-full rounded-full"
-		style="background-color: #0D0D0D;height:{screenWidth}px;"
+		class="absolute bottom-0 w-[110%] ellipse"
+		style="background-color: #0D0D0D;height:{screenWidth / 2}px;"
 	/>
 </div>
 
 <style>
 	.menu-transition {
-		transition: 1.1s ease;
+		transition: 1s ease;
 	}
 
 	.hide-menu {
@@ -43,5 +44,9 @@
 
 	.display-menu {
 		transform: translateY(0%);
+	}
+
+	.ellipse {
+		border-radius: 50%;
 	}
 </style>
