@@ -1,4 +1,5 @@
 <script>
+	import SlidingText from '$lib/Utils/SlidingText.svelte';
 	import { onMount } from 'svelte';
 
 	export let displayMenu = false;
@@ -12,6 +13,13 @@
 		window.addEventListener('resize', updateScreenWidth);
 		updateScreenWidth();
 	});
+
+	let content = [
+		{ name: 'Galerie' },
+		{ name: 'Projets' },
+		{ name: 'À propos' },
+		{ name: 'Contact' }
+	];
 </script>
 
 <div
@@ -21,11 +29,20 @@
 		{displayMenu ? 'display-menu' : 'hide-menu'}"
 	style="height:calc(100% + {screenWidth / 4}px);"
 >
-	<span
+	<div
 		id="menu-rect"
-		class="absolute top-0 w-full"
+		class="flex flex-col absolute top-0 w-full z-10"
 		style="background-color: #0D0D0D;height:calc(100% - {screenWidth / 4}px);"
-	/>
+	>
+		{#each content as c, i}
+			<SlidingText
+				content={c.name}
+				transition={displayMenu}
+				delay={0.2 + i / content.length}
+				style={'font-size:25px;text-transform:uppercase;'}
+			/>
+		{/each}
+	</div>
 	<span
 		id="menu-circle"
 		class="absolute bottom-0 w-[110%] ellipse"
@@ -35,11 +52,11 @@
 
 <style>
 	.menu-transition {
-		transition: 1s ease;
+		transition: 0.8s ease;
 	}
 
 	.hide-menu {
-		transform: translateY(-100%);
+		transform: translateY(-105%);
 	}
 
 	.display-menu {
