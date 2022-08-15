@@ -1,6 +1,6 @@
 <script>
-	import SlidingText from '$lib/Utils/SlidingText.svelte';
 	import { onMount } from 'svelte';
+	import SlidingContent from '$lib/Utils/SlidingContent.svelte';
 
 	export let displayMenu = false;
 
@@ -35,12 +35,13 @@
 		style="background-color: #0D0D0D;height:calc(100% - {screenWidth / 4}px);"
 	>
 		{#each content as c, i}
-			<SlidingText
-				content={c.name}
+			<SlidingContent
 				transition={displayMenu}
 				delay={0.3 + i / content.length}
 				style={'font-size:25px;text-transform:uppercase;font-family:morris,sans-serif;'}
-			/>
+			>
+				<p>{c.name}</p>
+			</SlidingContent>
 		{/each}
 	</div>
 	<span

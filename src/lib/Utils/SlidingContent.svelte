@@ -1,5 +1,4 @@
 <script>
-	export let content = '';
 	export let transition = false;
 	export let hover = true;
 	export let delay = 0;
@@ -17,7 +16,7 @@
 			{transition ? 'sliding-text-anim' : ''}"
 		style="color:{color};--delay:{delay}s;{style}"
 	>
-		{content}
+		<slot />
 	</span>
 </span>
 
