@@ -38,8 +38,8 @@
 			<SlidingText
 				content={c.name}
 				transition={displayMenu}
-				delay={0.2 + i / content.length}
-				style={'font-size:25px;text-transform:uppercase;'}
+				delay={0.3 + i / content.length}
+				style={'font-size:25px;text-transform:uppercase;font-family:morris,sans-serif;'}
 			/>
 		{/each}
 	</div>

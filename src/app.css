@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: morris;
+	src: url('/fonts/morris-roman/MorrisRomanBlack.ttf');
+}
+
 .scaling-anim {
 	animation: custom-scale 0.8s ease forwards;
 }
