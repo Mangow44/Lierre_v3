@@ -1,20 +1,22 @@
 <script>
 	export let transition = false;
+	export let animation = false;
 	export let hover = true;
 	export let delay = 0;
+	export let direction = 120;
 	export let style = '';
-	export let color = 'white';
 </script>
 
 <span
 	class="block m-auto overflow-hidden
 		{hover ? 'text-hover-effect' : ''}"
-	style="transition: 0.3s ease;"
+	style="transition: 0.3s ease;{style}"
 >
 	<span
 		class="block default-position 
-			{transition ? 'sliding-text-anim' : ''}"
-		style="color:{color};--delay:{delay}s;{style}"
+			{transition ? 'sliding-text-transi' : ''}
+			{animation ? 'sliding-text-anim' : ''}"
+		style="--direction:{direction}%;--delay:{delay}s;"
 	>
 		<slot />
 	</span>
@@ -23,17 +25,31 @@
 <style>
 	.default-position {
 		transition: 0s;
-		transform: translateY(120%);
+		transform: translateY(var(--direction));
 	}
 
-	.sliding-text-anim {
+	.sliding-text-transi {
 		transition: 0.7s ease-in;
 		transition-delay: var(--delay);
 		transform: translateY(0%);
 	}
 
+	.sliding-text-anim {
+		animation: slidTextAnim 1s ease forwards;
+		animation-delay: var(--delay);
+	}
+
 	.text-hover-effect:hover {
 		cursor: pointer;
 		transform: scale(1.2);
+	}
+
+	@keyframes slidTextAnim {
+		0% {
+			transform: translateY(var(--direction));
+		}
+		100% {
+			transform: translateY(0%);
+		}
 	}
 </style>
