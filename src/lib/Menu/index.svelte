@@ -37,7 +37,7 @@
 		{#each content as c, i}
 			<SlidingContent
 				transition={displayMenu}
-				delay={0.37 + i / content.length}
+				delay={0.5 + i / content.length}
 				style={'color:white;font-size:25px;text-transform:uppercase;font-family:morris,sans-serif;'}
 			>
 				<p>{c.name}</p>
@@ -53,7 +53,7 @@
 
 <style>
 	.menu-transition {
-		transition: 0.8s ease;
+		transition: 0.7s ease;
 	}
 
 	.hide-menu {

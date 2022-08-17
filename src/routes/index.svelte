@@ -18,11 +18,11 @@
 		direction={-120}
 		hover={false}
 		delay={0.7}
-		style={'position:absolute;bottom:1px;left:calc(50% - 4rem);height:4.2rem;width:8rem;'}
+		style={'position:absolute;bottom:1px;left:calc(50% - 4rem);height:auto;width:8rem;color:#FEBE63;text-shadow:-1px 0 black,0 1px black,1px 0 black,0 -1px black;'}
 	>
-		<div class="flex flex-col items-center">
-			<p class="font-[morris] uppercase text-sm">explore</p>
-			<img src="/pictures/scroll-down.svg" alt="scroll-down" class="w-7 h-auto" />
+		<div class="flex flex-col items-center hover:brightness-90 cursor-pointer">
+			<p class="font-[morris] uppercase text-lg">explore</p>
+			<img src="/pictures/scroll-down-5.svg" alt="scroll-down" class="w-7 h-auto" />
 		</div>
 	</SlidingContent>
 </PageContainer>

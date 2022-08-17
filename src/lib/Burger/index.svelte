@@ -29,7 +29,7 @@
 		height: 0.17rem;
 		width: 100%;
 		transition: 0.5s ease;
-		background-color: #f2f2f2;
+		background-color: #ffffff;
 	}
 
 	#burger .bar-1 {

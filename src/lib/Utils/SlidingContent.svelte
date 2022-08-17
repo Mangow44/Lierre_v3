@@ -29,7 +29,7 @@
 	}
 
 	.sliding-text-transi {
-		transition: 0.7s ease-in;
+		transition: 0.4s ease-in;
 		transition-delay: var(--delay);
 		transform: translateY(0%);
 	}
