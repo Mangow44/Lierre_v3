@@ -4,8 +4,5 @@ module.exports = {
 	theme: {
 		extend: {}
 	},
-	plugins: [],
-	fontFamily: {
-		morris: ['morris', 'sans-serif']
-	}
+	plugins: []
 };
