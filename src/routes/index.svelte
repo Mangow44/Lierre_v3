@@ -1,5 +1,6 @@
 <script>
 	import PageContainer from '$lib/PageContainer/index.svelte';
+	import Pulse from '$lib/Utils/Pulse.svelte';
 	import SlidingContent from '$lib/Utils/SlidingContent.svelte';
 </script>
 
@@ -13,16 +14,19 @@
             scaling-anim"
 	/>
 
-	<SlidingContent
-		animation={true}
-		direction={-120}
-		hover={false}
-		delay={0.7}
-		style={'position:absolute;bottom:1px;left:calc(50% - 4rem);height:auto;width:8rem;color:#FEBE63;text-shadow:-1px 0 black,0 1px black,1px 0 black,0 -1px black;'}
-	>
-		<div class="flex flex-col items-center hover:brightness-90 cursor-pointer">
-			<p class="font-[morris] uppercase text-lg">explore</p>
-			<img src="/pictures/scroll-down-5.svg" alt="scroll-down" class="w-7 h-auto" />
-		</div>
-	</SlidingContent>
+	<Pulse duration={5} delay={1.5} style={'position:absolute;bottom:3px;left:calc(50% - 1.25rem);'}>
+		<SlidingContent
+			animation={true}
+			direction={-120}
+			hover={false}
+			delay={0.7}
+			style={'color:#FEBE63;text-shadow:-1px 0 black,0 1px black,1px 0 black,0 -1px black;'}
+		>
+			<img
+				src="/pictures/scroll-down-6.svg"
+				alt="scroll-down"
+				class="w-10 h-auto cursor-pointer hover:brightness-90"
+			/>
+		</SlidingContent>
+	</Pulse>
 </PageContainer>
