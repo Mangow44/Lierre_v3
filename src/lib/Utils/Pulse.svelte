@@ -2,8 +2,6 @@
 	export let duration = 0;
 	export let delay = 0;
 	export let style = '';
-
-	console.log('ok');
 </script>
 
 <span class="m-auto pulse-anim" style="--duration:{duration}s;--delay:{delay}s;{style}">

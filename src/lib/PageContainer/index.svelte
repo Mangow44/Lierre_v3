@@ -9,7 +9,7 @@
 <section
 	{id}
 	class="{flexDirection == 'row' ? 'flex' : 'flex flex-col'} w-full"
-	style="height:calc(100vh - {offsetTop + offsetBot}rem);{style}"
+	style="min-height:calc(100vh - {offsetTop + offsetBot}rem);{style}"
 >
 	<slot />
 </section>

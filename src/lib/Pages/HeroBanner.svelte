@@ -11,7 +11,7 @@
 	<img
 		src="/pictures/banniere.png"
 		alt="Lierre banniere"
-		class="m-auto max-w-[auto] max-h-[100%] 
+		class="m-auto max-w-auto max-h-[100vh] 
             scaling-anim"
 	/>
 
