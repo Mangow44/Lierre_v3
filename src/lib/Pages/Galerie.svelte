@@ -16,15 +16,16 @@
 			}
 		};
 
-		new IntersectionObserver(handleIntersect, { threshold: 0.01 }).observe(watcher);
+		new IntersectionObserver(handleIntersect).observe(watcher);
 	});
 </script>
 
-<PageContainer id={'galerie'} flexDirection={'col'} style={'min-height:40px;'}>
+<PageContainer id={'galerie'} flexDirection={'col'} style={'position:relative;min-height:40px;'}>
 	{#each picturesArray as picture}
 		<Picture {...picture} />
 	{/each}
 
-	<!-- mettre le footer dedans ou transformer le footer en intersection -->
-	<div class="intersection-watcher bg-gray-900 w-full h-10" />
+	{#if pictures[picturesArray.length]}
+		<div class="intersection-watcher absolute bottom-0 w-full h-10" />
+	{/if}
 </PageContainer>
